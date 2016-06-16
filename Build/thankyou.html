@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+	<title>Herr Donald | You are enlisted</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Heil Donald">
+	<meta name="keywords" content="Donald Trump, donald trump, donaldtrump, Trump, trump, Donald, donald, Trump Jr. , Wife Donald, trump net worth, hitler, adolf hitler">
+	<meta name="author" content="Herr Donald">
+	<!-- Le styles -->
+	<link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="information">
+  <div class="container">
+    <h1>Herr Donald</h1>
+      <p>Heil Donald<br>Donald Trump, donald trump, donaldtrump, Trump, trump, Donald, donald, Trump Jr. , Wife Donald, trump net worth, hitler, adolf hitler</p>
+  </div>
+</header>
+
+<section class="main_section">
+  <div class="container">
+    <div class="row row--no-gutter">
+  		<div class="col col--4-of-12 col col--push-4-of-12">
+          <img src="img/heil_ herrdonald.png" class="img-responsive center-block" alt="Herr Donald">
+          <h1 class="thanklyoutitle">You are enlisted</h1>
+					<p class="thanklyoups">Our sweatshops in Mexico are working day and night to meet the demand for high quality FASCIST APPAREL!</p>
+					<p class="thanklyoups">You will be notified as soon as we are ready to send an illegal underage immigrant to deliver your order!</p>
+					<p class="thanklyoups">Refer Herr Donald to a friend and you may be one of the lucky few to get a t-shirt personally signed by your LEADER!</p>
+			</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
